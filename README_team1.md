@@ -35,3 +35,45 @@ This baseline Convolutional Neural Network (CNN) model is designed for image cla
     _Metrics_: The accuracy metric is specified to monitor the proportion of correctly classified instances during training and validation. It provides a straightforward way to assess the model's performance.
 
 Overall, this configuration is suited for a classification task with multiple classes, ensuring that the model optimizes its weights to minimize the classification error. The baseline model showcases a perfect accuracy of 100% which is extremely good. The F1 score (0.76) also looks good which denotes the model is not overfitting and baselined in right direction. But, the validation accuracy is only around 70%. So, there is still room for improvement which can be improved by advancing the model with more layers or fine tuning of the hyper parameters. 
+
+
+
+
+[***Optimized Model with Hyperparameter Tuning and Data Augmentation***](https://github.com/RamyaAnand27/team_project2/blob/team_project_2/src/Hyperparameter_Tuning_Image_Gen.ipynb):
+In this phase, we focused on enhancing the baseline and advanced models by introducing several techniques aimed at improving classification accuracy and model robustness. The key improvements included:
+
+•	Additional Convolutional Layers: We enhanced the model architecture by adding extra Conv2D layers, each followed by ReLU activation and MaxPooling layers. This allowed the model to capture more complex features and patterns from the images.
+
+•	Dropout Layers: To combat overfitting and enhance generalization, we incorporated Dropout layers after the fully connected (Dense) layers. This technique randomly drops a fraction of the neurons during training, reducing the model's tendency to become too tailored to the training data.
+
+•	Hyperparameter Tuning: We employed Keras Tuner to optimize key hyperparameters, including learning rate, batch size, and the number of neurons in the dense layers. This optimization process enabled us to identify the best configuration, which yielded the highest accuracy on the validation set.
+
+•	Data Augmentation: To further improve generalization, we utilized ImageDataGenerator for real-time data augmentation during training. This approach generated additional training examples through random transformations such as rotation, zoom, and horizontal flips, enhancing the model's robustness.
+Model Summaries
+
+- **Model 1: Tuned Model**
+
+  - **Architecture:** Standard CNN with Conv2D, MaxPooling2D, and Dense layers.
+
+  - **Key Features:** Configurable filters, kernel sizes, and optimizer choices (Adam or SGD).
+
+  - **Performance:** This model, optimized using Keras Tuner, included additional convolutional layers but did not feature Dropout. It achieved a validation accuracy of approximately 80.65% and a test accuracy of 71.43%. It demonstrated balanced performance with a precision-recall F1 score around 0.71.
+
+- **Model 2: Tuned Model with Dropout**
+
+  - **Architecture:** Enhanced CNN with additional Dropout layers for regularization.
+
+  - **Key Features:** Fixed hyperparameters, dropout layers to reduce overfitting.
+
+  - **Performance:** Achieved the best balance between accuracy and generalization. It demonstrated improvements over the baseline with a training accuracy of 95.11%, a validation accuracy of 77.42%, and a test accuracy of 81.82%. The F1 score showed a balanced performance across different document types.
+
+- **Model 3: Augmented Model with Data Augmentation**
+
+  - **Architecture:** Similar to Model 2 but incorporates data augmentation techniques.
+
+  - **Key Features:** Includes transformations such as rotation, shifts, shear, zoom, and horizontal flips.
+
+  - **Performance:** Data augmentation did not result in significant improvements in model performance compared to Model 2.
+
+
+The model with Dropout layers (Model 2) proved to be the most effective, outperforming both the baseline and the augmented models. Despite the application of data augmentation, the dropout-enhanced model achieved the most balanced and accurate results.
