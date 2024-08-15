@@ -45,6 +45,7 @@ This baseline Convolutional Neural Network (CNN) model is designed for image cla
   - **Architecture:** Standard CNN with Conv2D, MaxPooling2D, Flatten and Dense layer.
 
   - **Performance:** The baseline model showcases a perfect accuracy of 100% which is extremely good. The F1 score (0.76) also looks good which denotes the model is not overfitting and baselined in right direction. But, the validation accuracy is only around 70%. So, there is still room for improvement which can be improved by advancing the model with more layers or fine tuning of the hyper parameters. 
+
 Overall, this configuration is suited for a classification task with multiple classes, ensuring that the model optimizes its weights to minimize the classification error. 
 
 
