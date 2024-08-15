@@ -26,17 +26,27 @@ In this phase, we focused on preparing and organizing our image dataset for the 
 Through these preprocessing steps, we've transformed our raw image data into a format that's optimized for training deep learning models. The resulting datasets are well-structured, normalized, and split appropriately for training, validation, and testing purposes.
 
 [***Building Baseline Model***](https://github.com/RamyaAnand27/team_project2/blob/team_project_2/src/2_BaselineModel.ipynb): 
-This baseline Convolutional Neural Network (CNN) model is designed for image classification tasks. It begins with a Conv2D layer that applies 32 filters of size 3x3 to the input images, which are expected to be of size 150x150 pixels with 3 color channels (RGB). The ReLU activation function introduces non-linearity to the model, helping it learn complex patterns. A MaxPooling2D layer follows, reducing the spatial dimensions of the feature maps and thus, the computational load. The model then flattens the feature maps into a one-dimensional vector, which is passed through a fully connected (Dense) layer with 64 neurons and ReLU activation, providing the model with the capacity to learn from the extracted features. Finally, a softmax output layer is used, making this model suitable for classification tasks.
+This baseline Convolutional Neural Network (CNN) model is designed for image classification tasks. The architecture consists of the following layers,
 
-    _Optimizer_: The Adam optimizer is chosen with a learning rate of 0.001. Adam is a popular choice for training deep learning models as it adapts the learning rate for each parameter, combining the benefits of both AdaGrad and RMSprop.
+•	It begins with a Conv2D layer that applies 32 filters of size 3x3 to the input images, which are expected to be of size 150x150 pixels with 3 color channels (RGB). The ReLU activation function introduces non-linearity to the model, helping it learn complex patterns. 
 
-    _Loss Function_: The loss function is set to categorical_crossentropy, which is appropriate for multi-class classification problems where the output layer has a softmax activation function, and the labels are one-hot encoded. This function measures the discrepancy between the predicted class probabilities and the true labels.
+•	A MaxPooling2D layer follows, reducing the spatial dimensions of the feature maps and thus, the computational load. 
 
-    _Metrics_: The accuracy metric is specified to monitor the proportion of correctly classified instances during training and validation. It provides a straightforward way to assess the model's performance.
+•	The model then flattens the feature maps into a one-dimensional vector, which is passed through a fully connected (Dense) layer with 64 neurons and ReLU activation, providing the model with the capacity to learn from the extracted features. 
 
-Overall, this configuration is suited for a classification task with multiple classes, ensuring that the model optimizes its weights to minimize the classification error. The baseline model showcases a perfect accuracy of 100% which is extremely good. The F1 score (0.76) also looks good which denotes the model is not overfitting and baselined in right direction. But, the validation accuracy is only around 70%. So, there is still room for improvement which can be improved by advancing the model with more layers or fine tuning of the hyper parameters. 
+•	Finally, a softmax output layer is used, making this model suitable for classification tasks.
 
+•	Optimizer: The Adam optimizer is chosen with a learning rate of 0.001. Adam is a popular choice for training deep learning models as it adapts the learning rate for each parameter, combining the benefits of both AdaGrad and RMSprop.
 
+•	Loss Function: The loss function is set to categorical_crossentropy, which is appropriate for multi-class classification problems where the output layer has a softmax activation function, and the labels are one-hot encoded. This function measures the discrepancy between the predicted class probabilities and the true labels.
+
+•	Metrics: The accuracy metric is specified to monitor the proportion of correctly classified instances during training and validation. It provides a straightforward way to assess the model's performance.
+
+  - **Architecture:** Standard CNN with Conv2D, MaxPooling2D, Flatten and Dense layer.
+
+  - **Performance:** The baseline model showcases a perfect accuracy of 100% which is extremely good. The F1 score (0.76) also looks good which denotes the model is not overfitting and baselined in right direction. But, the validation accuracy is only around 70%. So, there is still room for improvement which can be improved by advancing the model with more layers or fine tuning of the hyper parameters. 
+  - 
+Overall, this configuration is suited for a classification task with multiple classes, ensuring that the model optimizes its weights to minimize the classification error. 
 
 
 [***Optimized Model with Hyperparameter Tuning and Data Augmentation***](https://github.com/RamyaAnand27/team_project2/blob/team_project_2/src/Hyperparameter_Tuning_Image_Gen.ipynb):
