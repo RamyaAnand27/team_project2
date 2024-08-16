@@ -48,6 +48,32 @@ This baseline Convolutional Neural Network (CNN) model is designed for image cla
 
 Overall, this configuration is suited for a classification task with multiple classes, ensuring that the model optimizes its weights to minimize the classification error. 
 
+[***Building Advanced Model***](https://github.com/RamyaAnand27/team_project2/blob/team_project_2/src/3_AdvancedModel.ipynb): 
+The advanced model is built using Keras, incorporating multiple convolutional, max pooling, and dropout layers for feature extraction and regularization. Batch normalization is applied after each convolutional layer to stabilize and accelerate the training process.
+CNN Architecture
+The model architecture consists of the following components:
+Convolutional Layers: Four convolutional blocks with increasing filter sizes (32, 64, 128, and 256). Each block includes:
+A Conv2D layer with ReLU activation.
+A Batch Normalization layer to stabilize and accelerate training.
+A MaxPooling layer to reduce the spatial dimensions.
+A Dropout layer to prevent overfitting.
+Fully Connected Layers: After flattening the feature maps from the convolutional layers:
+A Dense layer with 512 neurons and ReLU activation.
+A Dropout layer to further reduce overfitting.
+An output Dense layer with 4 neurons and softmax activation to output the classification probabilities.
+Model Compilation
+The model is compiled using the Adam optimizer, with categorical crossentropy as the loss function, and accuracy as the evaluation metric.
+
+Model Training
+The model is trained for 20 epochs with a batch size of 8. The training process includes monitoring validation accuracy to gauge the model’s generalization ability. During training, the model's weights are updated to minimize the loss function and maximize accuracy on both the training and validation datasets.
+
+Performance Evaluation
+Post-training, the model's performance is evaluated using several metrics:
+Accuracy: The accuracy is tracked during training and validation.
+F1 Score: The F1 score is calculated on the validation set to measure the balance between precision and recall.
+These metrics provide insights into the model’s effectiveness in correctly classifying images.
+Results
+The training and validation accuracy are plotted over the epochs to visualize the model's learning process. The final F1 score is also computed to quantify the model's performance on the validation set.
 
 [***Optimized Model with Hyperparameter Tuning and Data Augmentation***](https://github.com/RamyaAnand27/team_project2/blob/team_project_2/src/Hyperparameter_Tuning_Image_Gen.ipynb):
 In this phase, we focused on enhancing the baseline and advanced models by introducing several techniques aimed at improving classification accuracy and model robustness. The key improvements included:
