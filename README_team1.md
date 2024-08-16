@@ -1,6 +1,6 @@
 ## Project Name: *Financial Document Classification*
 
-### Team Members: *Ramya Anand, Sunny Duggal, Jamil Abou, Heidi Ye, Leslie wang*
+### Team Members: *Ramya Anand, Sunny Duggal, Jamil Abou, Heidi Ye, Leslie Wang*
 
 The second project of Team 1 is on 'Image Analysis and Classification of Financial and Personal Identification Documents'. For any kind of banking applications like opening of a bank account or applying for a mortgage etc.. there is always many document verification involved. Most of the time these documents are uploaded into the system and verfied manually. If this verification can be performed by a model, it could improve the operational efficiency of the whole process. The main intent of this project is to classify what kind of document is scanned or uploaded into the system to determine if it is a bank statement/ check/ salary slip/ utility bill and so on. This is premilinary step towards the identification and verification of the document acheived through the training and predictive analysis of the CNN model.
 
@@ -74,6 +74,26 @@ F1 Score: The F1 score is calculated on the validation set to measure the balanc
 These metrics provide insights into the model’s effectiveness in correctly classifying images.
 Results
 The training and validation accuracy are plotted over the epochs to visualize the model's learning process. The final F1 score is also computed to quantify the model's performance on the validation set.
+
+[***Cross Validation***](https://github.com/RamyaAnand27/team_project2/blob/team_project_2/src/Cross_validation.ipynb):
+To apply K-Fold Cross-Validation to the best models perviously provided, we would need to split your data into k folds (e.g., 5 or 10) and then train and validate each model on k-1 folds while testing on the remaining fold. We repeat this process k times, each time using a different fold as the validation set. Finally, we average the performance metrics across all folds and do data visualization.
+Step 1: Import Required Libraries
+Step 2: Define a Function to Perform K-Fold Cross-Validation
+Step 3: Perform K-Fold Cross-Validation for Model
+Step 4: Evaluate and Make Models Data Visulization
+1. plot_accuracies_per_fold(accuracies): This function creates a bar chart where each bar represents the accuracy achieved on the validation set for each fold.
+If the accuracies across the folds are consistent, it suggests that the model is stable and performs reliably across different subsets of data.
+If there are significant variations between folds, this could indicate that the model is sensitive to the specific data it’s trained on, which might be a sign of overfitting or that the data is not uniformly distributed.
+2. plot_loss_per_epoch(histories): This function creates a line plot showing the validation loss per epoch for each fold. This helps in visualizing how well the model converges during training.
+A steady decrease in validation loss across epochs is a good sign, indicating that the model is learning effectively.
+If the validation loss fluctuates or increases in later epochs, it may suggest overfitting, where the model starts to perform well on the training data but poorly on the validation data.
+Comparing the loss curves between folds can also help identify if one particular fold is performing worse than others, which might indicate issues with the data or the need for further model tuning.
+3. plot_combined_accuracy_per_fold(histories): This function plots both the training and validation accuracy across epochs for each fold. It helps in understanding how the model is learning with each fold.
+If the training accuracy improves while validation accuracy plateaus or decreases, this is another sign of overfitting.
+If both training and validation accuracy improve consistently and are close to each other, it suggests the model is generalizing well.
+Large gaps between training and validation accuracy may indicate that the model is memorizing the training data (overfitting) rather than learning patterns that generalize to new data.
+
+Cross Validation Overall performance: The model exhibited strong performance across all folds, with validation accuracy ranging from 77.55% to 100%. Fold 1 showed a slightly lower validation accuracy compared to the other folds, which might suggest some variability in the data or model's sensitivity to certain data subsets. Folds 2 and 3 demonstrated perfect or near-perfect performance, indicating that the model is highly effective for the given task.
 
 [***Optimized Model with Hyperparameter Tuning and Data Augmentation***](https://github.com/RamyaAnand27/team_project2/blob/team_project_2/src/Hyperparameter_Tuning_Image_Gen.ipynb):
 In this phase, we focused on enhancing the baseline and advanced models by introducing several techniques aimed at improving classification accuracy and model robustness. The key improvements included:
