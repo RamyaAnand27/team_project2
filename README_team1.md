@@ -133,3 +133,8 @@ Model Summaries
 
 
 The model with Dropout layers (Model 2) proved to be the most effective, outperforming both the baseline and the augmented models. Despite the application of data augmentation, the dropout-enhanced model achieved the most balanced and accurate results.
+
+
+## Links to the video recordings
+
+Jamil Abou: https://drive.google.com/file/d/1-C8eq_qkqb8bdXia3GfHLfiBGivz90Rj/view?usp=drive_link
